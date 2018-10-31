@@ -30,6 +30,7 @@ test = "StrINg"
 print(test[1:]) # trINg
 print(test[2:4]) # rI
 print(test[2:2]) # nothing
+print(len(test)) # 6
 ```
 
 ### string split() & join()
