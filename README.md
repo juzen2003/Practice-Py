@@ -28,6 +28,7 @@ print(test.upper()) # STRING
 ```py
 test = "StrINg"
 print(test[1:]) # trINg
+print(test[:3]) # Str
 print(test[2:4]) # rI
 print(test[2:2]) # nothing
 print(len(test)) # 6
@@ -92,4 +93,49 @@ class Animal:
 dog = Animal("Lucky", 2, "Dog")
 dog.move() #Lucky is moving!
 print(Animal.animal_hi) #Hiii
+```
+
+### args (non-keyworded argument list)
+```py
+def add(*args):
+    sum = 0
+    for item in args:
+        sum += item
+    return sum
+# args = [1, 2, 3, 4, 5]
+s = add(1,2,3,4,5)
+print s
+```
+
+### kwargs (keyworded argument dictionary)
+```py
+def add(**kwargs):
+    sum = 0
+    for k, v in kwargs.items():
+        sum += v
+    return sum
+# kwargs = {num1: 1, num2: 2, num3: 3, num4: 4, num5: 5}
+s = add(num1=1, num2=2, num3=3, num4=4, num5=5)
+print s
+```
+
+### dictionary
+```py
+d = {"a": 'value', "another": 'value2'}
+d["item1"] = 2
+d["item2"] = 23
+
+print d # {'a': 'value', 'item2': 23, 'item1': 2, 'another': 'value'}
+
+for key in d:
+  print key # a item2 item1 another
+
+for value in d.values():
+  print value # value 23 2 value
+
+print d.items() # [('a', 'value'), ('item2', 23), ('item1', 2), ('another', 'value')]
+
+for k, v in d.items():
+  print k # a item2 item1 another
+  print v # value 23 2 value
 ```
