@@ -17,6 +17,13 @@ print(hi_string * 3)
 # hihihi
 ```
 
+### repeat string
+```py
+hi = "hi here is replaced one"
+print(hi.replace("here", "hi"))
+# hi hi is replaced one
+```
+
 ### string lowercase uppercase
 ```py
 test = "StrINg"
@@ -95,6 +102,33 @@ dog.move() #Lucky is moving!
 print(Animal.animal_hi) #Hiii
 ```
 
+### class inheritance
+```py
+class Animal:
+    # class variable
+    animal_hi = "Hiii"
+    # define instance variables when class object is init
+    def __init__(self, name="", age=0, type=""):
+        self.name = name
+        self.age = age
+        self.type = type
+
+    def move(self):
+        print(self.name + " is moving!")
+
+dog1 = Animal("Lucky", 2, "Dog")
+dog1.move() #Lucky is moving!
+print(Animal.animal_hi) #Hiii
+
+class Dog(Animal):
+    def __init__(self, name, age, type):
+        super().__init__(name, age, type)
+
+dog2 = Dog("Test", 2, "Dog")
+dog2.move() #Test is moving!
+print(Dog.animal_hi) #Hiii
+```
+
 ### args (non-keyworded argument list)
 ```py
 def add(*args):
@@ -104,7 +138,7 @@ def add(*args):
     return sum
 # args = [1, 2, 3, 4, 5]
 s = add(1,2,3,4,5)
-print s
+print(s)
 ```
 
 ### kwargs (keyworded argument dictionary)
@@ -116,7 +150,7 @@ def add(**kwargs):
     return sum
 # kwargs = {num1: 1, num2: 2, num3: 3, num4: 4, num5: 5}
 s = add(num1=1, num2=2, num3=3, num4=4, num5=5)
-print s
+print(s)
 ```
 
 ### dictionary
@@ -128,14 +162,30 @@ d["item2"] = 23
 print d # {'a': 'value', 'item2': 23, 'item1': 2, 'another': 'value'}
 
 for key in d:
-  print key # a item2 item1 another
+  print(key) # a item2 item1 another
 
 for value in d.values():
-  print value # value 23 2 value
+  print(value) # value 23 2 value
 
 print d.items() # [('a', 'value'), ('item2', 23), ('item1', 2), ('another', 'value')]
 
 for k, v in d.items():
-  print k # a item2 item1 another
-  print v # value 23 2 value
+  print(k) # a item2 item1 another
+  print(v) # value 23 2 value
+```
+
+### [] is a falesy value
+```py
+a = []
+if not a:
+  print("this will be run if a is []")
+```
+
+### regex
+```py
+import re
+prog = re.compile(pattern)
+result1 = prog.match(string)
+#  same as
+result2 = re.match(pattern, string)
 ```
