@@ -5,8 +5,10 @@ name = "John"
 age = 23
 res = "Hi my name is {}, I am {} years old".format(name, age)
 res1 = "Hi my name is %s, I am %s years old" %(name, age)
+res_for_python3 = f"Hi my name is {name}, I am {age} years old"
 print(res)
 print(res1)
+print(res_for_python3) # we prefer this
 # Hi my name is John, I am 23 years old
 ```
 
@@ -172,6 +174,15 @@ print d.items() # [('a', 'value'), ('item2', 23), ('item1', 2), ('another', 'val
 for k, v in d.items():
   print(k) # a item2 item1 another
   print(v) # value 23 2 value
+```
+
+### merge two dictionaries
+```py
+d1 = {"a": 'value1', "another": 'value12'}
+d2 = {"a": 'value2', "other": "value22"}
+d3 = {**d1, **d2}
+print(d3)
+# {'a': 'value2', 'another': 'value12', 'other': 'value22'}
 ```
 
 ### [] is a falesy value

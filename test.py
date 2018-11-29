@@ -8,26 +8,23 @@
 #
 # print(res)
 
-class Animal:
-    # class variable
-    animal_hi = "Hiii"
-    # define instance variables when class object is init
-    def __init__(self, name="", age=0, type=""):
-        self.name = name
-        self.age = age
-        self.type = type
-
-    def move(self):
-        print(self.name + " is moving!")
-
-dog1 = Animal("Lucky", 2, "Dog")
-dog1.move() #Lucky is moving!
-print(Animal.animal_hi) #Hiii
-
-class Dog(Animal):
-    def __init__(self, name, age, type):
-        super().__init__(name, age, type)
-
-dog2 = Dog("Test", 2, "Dog")
-dog2.move()
-print(Dog.animal_hi)
+# import functools
+#
+# def do_twice(func):
+#     @functools.wraps(func)
+#     def wrapper_do_twice(*args, **kwargs):
+#         func(*args, **kwargs)
+#         return func(*args, **kwargs)
+#     return wrapper_do_twice
+#
+# @do_twice
+# def say_hi(name):
+#     print("hi %s" %(name))
+#     return "hello %s" %(name)
+#
+# x = say_hi("John")
+# print(x)
+d1 = {"a": 'value1', "another": 'value12'}
+d2 = {"a": 'value2', "other": "value22"}
+d3 = {**d1, **d2}
+print(d3)
